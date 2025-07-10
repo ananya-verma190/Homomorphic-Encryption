@@ -8,9 +8,9 @@ using namespace seal;
 int main()
 {
     // Setup encryption stuff
-    EncryptionParameters parms(scheme_type::ckks);
-    parms.set_poly_modulus_degree(8192);
-    parms.set_coeff_modulus(CoeffModulus::Create(8192, { 60, 40, 40, 60 }));
+    EncryptionParameters parms(scheme_type::ckks); 
+    parms.set_poly_modulus_degree(8192); #n
+    parms.set_coeff_modulus(CoeffModulus::Create(8192, { 60, 40, 40, 60 })); 
 
     SEALContext context(parms);
     KeyGenerator keygen(context);
