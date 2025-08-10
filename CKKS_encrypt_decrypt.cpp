@@ -7,7 +7,7 @@ using namespace seal;
 
 int main()
 {
-    // Setup encryption stuff
+    //setup encryption stuff
     EncryptionParameters parms(scheme_type::ckks); 
     parms.set_poly_modulus_degree(8192); //N
     parms.set_coeff_modulus(CoeffModulus::Create(8192, { 60, 40, 40, 60 })); 
@@ -24,14 +24,14 @@ int main()
 
     double scale = pow(2.0, 40);
 
-    // Get numbers from user
+    //input numbers
     vector<double> numbers;
     string line;
 
     cout << "Enter data: ";
     getline(cin, line);
 
-    // Simple parsing - find spaces and convert
+    //parsing
     string current_number = "";
     for (int j = 0; j < line.length(); j++)
     {
@@ -54,7 +54,7 @@ int main()
         numbers.push_back(stod(current_number));
     }
 
-    // Show original numbers
+    //display original numbers
     cout << "\nOriginal numbers: ";
     int i;
     for (i = 0; i < numbers.size(); i++)
@@ -63,14 +63,14 @@ int main()
     }
     cout << endl;
 
-    // Encrypt
+    //encrypt
     Plaintext plain;
     encoder.encode(numbers, scale, plain);
 
     Ciphertext encrypted;
     encryptor.encrypt(plain, encrypted);
 
-    // Decrypt
+    //decrypt
     Plaintext decrypted_plain;
     decryptor.decrypt(encrypted, decrypted_plain);
 
@@ -78,7 +78,7 @@ int main()
     encoder.decode(decrypted_plain, decrypted_numbers);
     decrypted_numbers.resize(numbers.size());
 
-    // Show decrypted numbers
+    //display decrypted numbers
     cout << "Decrypted numbers: ";
     for (i = 0; i < decrypted_numbers.size(); i++)
     {
@@ -86,7 +86,7 @@ int main()
     }
     cout << endl;
 
-    // Calculate and show errors
+    //calculate errors
     cout << "\nErrors: ";
     for (i = 0; i < numbers.size(); i++)
     {
