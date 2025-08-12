@@ -1,4 +1,4 @@
-# Homomorphic Encryption-Based DC Motor Control (CKKS + Microsoft SEAL)
+# Homomorphic Encryption-Based DC Motor Control
 
 This project implements a **PD-controlled DC motor simulation** where **all computations are performed on encrypted data** using the **CKKS scheme** from [Microsoft SEAL](https://github.com/microsoft/SEAL).  
 It demonstrates the concept of **post-quantum secure encrypted control systems**, ensuring that sensitive control parameters and system states remain private.
