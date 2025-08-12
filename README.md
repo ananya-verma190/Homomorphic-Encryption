@@ -87,6 +87,9 @@ make
 
 ### 4. Run
 ```bash
+./CKKS_encrypt_decrypt
+./CKKS_homomorphic_operations
+./DC_Motor
 ./DC_Motor_PD
 ```
 
