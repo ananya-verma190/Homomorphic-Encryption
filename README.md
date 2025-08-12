@@ -43,7 +43,7 @@ It demonstrates the concept of **post-quantum secure encrypted control systems**
 - Runs simulation loop until target speed is reached or maximum time is exceeded.
 - Encrypts/decrypts at each step (partial decryption for analysis).
 
-#### **CKKS_encrypt_decrypt.cpp**
+### **CKKS_encrypt_decrypt.cpp**
 - Wraps Microsoft SEAL API for easy encryption/decryption of:
   - double
   - vector<double>
@@ -54,7 +54,7 @@ It demonstrates the concept of **post-quantum secure encrypted control systems**
   - encrypt_vector
   - decrypt_vector
 
-#### **CKKS_homomorphic_operations.cpp**
+### **CKKS_homomorphic_operations.cpp**
 - Implements basic CKKS operations using Evaluator:
   - Addition of ciphertexts
   - Multiplication (with relinearization)
@@ -86,3 +86,17 @@ make
 ```
 
 ### 4. Run
+```bash
+./DC_Motor_PD
+```
+
+
+## Learning Resources
+- Microsoft SEAL Examples
+- Homomorphic Encryption for Arithmetic of Approximate Numbers (CKKS Paper)
+- Control Theory Basics (PD Control)
+
+
+## Notes
+- This code is designed for educational demonstration.
+- For real-world secure control, avoid intermediate decryption inside the control loop.
