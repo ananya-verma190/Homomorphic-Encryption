@@ -73,7 +73,17 @@ git clone https://github.com/ananya-verma190/Homomorphic-Encryption.git
 cd CKKS
 ```
 ### 2. Install Dependencies
-- Microsoft SEAL (v3.6 or earlier)
+- Microsoft SEAL (v3.6 or earlier) and Eigen3
+  - ```bash
+    git clone https://github.com/microsoft/SEAL.git
+    cd SEAL
+    cmake -S . -B build
+    cmake --build build
+    cmake --install build
+
+    sudo apt install libeigen3-dev
+    ```
+
 - CMake ≥ 3.10
 - C++17 compiler (GCC, Clang, MSVC)
 
